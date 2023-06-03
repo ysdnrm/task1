@@ -1,0 +1,81 @@
+/* ブラウザがそれぞれ持っているCSSをリセットするための記述 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  height: 50px;
+  background-color: #FF9A4B;
+}
+
+main {
+  width: 960px;
+  margin: 50px auto;
+  display: flex;/*子要素を横並びにする。*/
+}
+.step-box {
+  width: 300px;
+  background-color: #EEEEEE;
+  position: relative;/*この要素を基準に子要素(step)の位置指定をする*/
+  margin-right: 30px;/*box右側の余白*/
+  padding: 10px;/*box内枠の余白*/
+}
+/*最後のboxのみ*/
+.step-box:last-child {
+  margin-right: 0;/*外右の余白なし*/
+}
+.step {
+  background-color: #FF9A4B;
+  color: #fff;
+  position: absolute;/*親(step-box)を基準に位置指定する*/
+  top: 0;/*親の上からの距離*/
+  left: 0;/*親の左からの距離*/
+}
+.step-img1 {
+  background-image: url(img/flow01.png);
+  height: 150px;
+  background-position: bottom;/*imgの下部分を表示*/
+  background-size: cover;
+}
+.step-img2 {
+  background-image: url(img/flow02.png);
+  height: 150px;
+  background-position: bottom;
+  background-size: cover;
+}
+.step-img3 {
+  height: 150px;
+  background-image: url(img/flow03.png);
+  background-position: bottom;
+  background-size: cover;
+}
+.title {
+  margin: 15px 0 5px;/*「タイトルが入ります」の余白（上　右左　下）*/
+}
+/*"textクラス"上の余白は"titleクラス"の下余白として指定した*/
+
+footer {
+  height: 50px;
+  background-color: #AAAAAA;
+}
+
+/*レスポンシブ対応*/
+@media screen and (max-width:768px) {
+  main {
+    display: block;
+    width: 100%;
+  }
+  .step-box {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .step-box:last-child {
+    margin-bottom: 0;
+    margin-right: auto;
+  }
+}
+
+
